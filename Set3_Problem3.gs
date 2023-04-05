@@ -1,11 +1,9 @@
 function sortSheetByBookedAndColumn3(sheetName) {
-  // Get the sheet by name
+
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Input");
-  
-  // Get the range of data in the sheet starting from row 2
+
   var range = sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn());
 
-  // Sort the range by column 4 in descending order (booked items first), then by column 3
   range.sort([{column: 4, ascending: true}, {column: 3, ascending: true}]);
 }
 
